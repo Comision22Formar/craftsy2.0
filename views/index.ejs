@@ -35,68 +35,31 @@
         </div>
 
         <section class="home__main__section">
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-01.jpg" alt="img-phone-01">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
+
+            <% productos.forEach(({id, imagen, nombre, descripcion}) => { %>
+                <article class="home__main__section__article">
+                <img src="/images/<%= imagen %>" alt="img-phone-01">
+                <h4><%= nombre %></h4>
+                <p><%= descripcion %></p>
+                <a class="button button__primary" href="/productos/<%= id %>">ver mas</a>
             </article>
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-02.jpg" alt="img-phone-02">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
-            </article>
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-03.jpg" alt="img-phone-03">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
-            </article>
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-01.jpg" alt="img-phone-01">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
-            </article>
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-02.jpg" alt="img-phone-02">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
-            </article>
-            <article class="home__main__section__article">
-                <img src="/images/img-phone-03.jpg" alt="img-phone-03">
-                <h4>Nombre del producto</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum harum tenetur perspiciatis
-                    nemo enim.</p>
-                <a href="">ver mas</a>
-            </article>
+            <% }) %>
+            
+         
+          
         </section>
         <aside class="home__main__aside">
             <h2>Tutoriales</h2>
             <section class="home__main__aside__section--tutoriales">
-                <article class="home__main__aside__section__article">
-                    <img src="/images/aside-01.jpg" alt="aside-01">
-                    <p>Titulo del tutorial de reparación</p>
-                </article>
-                <article class="home__main__aside__section__article">
-                    <img src="/images/aside-02.jpg" alt="aside-02">
-                    <p>Titulo del tutorial de reparación</p>
-                </article>
-                <article class="home__main__aside__section__article">
-                    <img src="/images/aside-03.jpg" alt="aside-03">
-                    <p>Titulo del tutorial de reparación</p>
-                </article>
-                <article class="home__main__aside__section__article">
-                    <img src="/images/aside-04.jpg" alt="aside-04">
-                    <p>Titulo del tutorial de reparación</p>
-                </article>
+
+                <% tutoriales.forEach(({ nombre, imagen}) => { %>
+                    <article class="home__main__aside__section__article">
+                        <img src="/images/<%= imagen %>" alt="aside-01">
+                        <p><%= nombre %></p>
+                    </article>
+                <% }) %>
+
+              
             </section>
             <h2>Publicidad</h2>
             <section class="home__main__aside__section--publicidad">
@@ -139,7 +102,7 @@
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <%- include('./partials/scripts') %>
     <script>
         const swiper_1 = new Swiper('.mySwiper_1', {
 
