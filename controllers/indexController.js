@@ -5,13 +5,28 @@ module.exports = {
         
         const productos = leerJSON('productos');
         const tutoriales = leerJSON('tutoriales');
+        const banner = leerJSON('banner');
 
         return res.render('index', { 
             productos,
-            tutoriales
+            tutoriales,
+            banner,
         });
       },
       detail : (req,res) => {
-        return res.render('productDetail')
+
+        const {id} = req.params;
+
+        const productos = leerJSON('productos')
+
+        const producto = productos.find((producto) => producto.id === +id)
+        
+        const productosRelacionados = productos.filter(item => item.categoria === producto.categoria)
+
+
+        return res.render('productDetail', {
+         ...producto,
+         productosRelacionados
+        })
       }
 }

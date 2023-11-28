@@ -23,5 +23,17 @@
             "nombre" : "Recuperación",
             "descripcion" : "lorem ipsum dolor amet sit",
             "imagen" : "aside-01.jpg"
+        },
+        {
+            "id" : 5,
+            "nombre" : "Bloqueo",
+            "descripcion" : "lorem ipsum dolor amet sit",
+            "imagen" : "aside-03.jpg"
+        },
+        {
+            "id" : 6,
+            "nombre" : "Desbloqueo",
+            "descripcion" : "lorem ipsum dolor amet sit",
+            "imagen" : "aside-01.jpg"
         }
     ]
