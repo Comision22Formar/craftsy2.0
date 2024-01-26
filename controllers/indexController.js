@@ -1,3 +1,5 @@
+const db = require('../database/models')
+
 const { leerJSON } = require("../data");
 
 module.exports = {
